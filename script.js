@@ -38,9 +38,15 @@ function colorindo (select) {
     let colocandoCor = document.querySelector ('.selected')
     select.target.style.backgroundColor = colocandoCor.style.backgroundColor
 }
-
 pixelUm.addEventListener ('click', colorindo)
 pixelDois.addEventListener ('click', colorindo)
 pixelTres.addEventListener ('click', colorindo)
 pixelQuatro.addEventListener ('click', colorindo)
 pixelCinco.addEventListener ('click', colorindo)
+
+
+let chamandoBotao = document.getElementById('clear-board')
+function clear (limpando) {
+ limpando.target = window.location.reload()
+}
+chamandoBotao.addEventListener ('click', clear)
