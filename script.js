@@ -1,3 +1,8 @@
+window.onload = function () {
+    let corPretaAoIniciar = document.querySelector('.color');
+    corPretaAoIniciar.classList.add('selected');
+}
+
 let quadrado1 = document.getElementsByClassName('color')[0];
 quadrado1.style.background = "black"
 
@@ -10,49 +15,32 @@ quadrado3.style.background = "yellow"
 let quadrado4 = document.getElementsByClassName('color')[3];
 quadrado4.style.background = "lightgreen"
 
-//
-let divQuadro = document.getElementById('pixel-board')
-let pixel1 = document.getElementById('pixel-um')
-let pixel2 = document.getElementById('pixel-dois')
-let pixel3 = document.getElementById('pixel-tres')
-let pixel4 = document.getElementById('pixel-quatro')
-let pixel5 = document.getElementById('pixel-cinco')
 
-for (let criandoPixels = 1; criandoPixels <= 5; criandoPixels += 1) {
-    let pixelsI = document.createElement('div');
-    pixelsI.innerHTML = 5[criandoPixels]
-    pixelsI.className = 'pixel'
-    pixel1.appendChild(pixelsI)
+function selecionaCor (selecionando) {
+    let seleciona = document.querySelector ('.selected')
+    seleciona.classList.remove('selected')
+    selecionando.target.classList.add ('selected')
 }
 
-for (let criandoPixels = 1; criandoPixels <= 5; criandoPixels += 1) {
-    let pixelsI = document.createElement('div');
-    pixelsI.innerHTML = 5[criandoPixels]
-    pixelsI.className = 'pixel'
-    pixel2.appendChild(pixelsI)
+quadrado1.addEventListener ('click', selecionaCor)
+quadrado2.addEventListener ('click', selecionaCor) 
+quadrado3.addEventListener ('click', selecionaCor) 
+quadrado4.addEventListener ('click', selecionaCor) 
+
+
+let pixelUm = document.getElementById('pixel-um');
+let pixelDois = document.getElementById('pixel-dois');
+let pixelTres = document.getElementById('pixel-tres');
+let pixelQuatro = document.getElementById('pixel-quatro');
+let pixelCinco = document.getElementById('pixel-cinco');
+
+function colorindo (select) {
+    let colocandoCor = document.querySelector ('.selected')
+    select.target.style.backgroundColor = colocandoCor.style.backgroundColor
 }
 
-for (let criandoPixels = 1; criandoPixels <= 5; criandoPixels += 1) {
-    let pixelsI = document.createElement('div');
-    pixelsI.innerHTML = 5[criandoPixels]
-    pixelsI.className = 'pixel'
-    pixel3.appendChild(pixelsI)
-}
-
-for (let criandoPixels = 1; criandoPixels <= 5; criandoPixels += 1) {
-    let pixelsI = document.createElement('div');
-    pixelsI.innerHTML = 5[criandoPixels]
-    pixelsI.className = 'pixel'
-    pixel4.appendChild(pixelsI)
-}
-
-for (let criandoPixels = 1; criandoPixels <= 5; criandoPixels += 1) {
-    let pixelsI = document.createElement('div');
-    pixelsI.innerHTML = 5[criandoPixels]
-    pixelsI.className = 'pixel'
-    pixel5.appendChild(pixelsI)
-}
-
-
-
-
+pixelUm.addEventListener ('click', colorindo)
+pixelDois.addEventListener ('click', colorindo)
+pixelTres.addEventListener ('click', colorindo)
+pixelQuatro.addEventListener ('click', colorindo)
+pixelCinco.addEventListener ('click', colorindo)
