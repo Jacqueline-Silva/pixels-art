@@ -26,4 +26,10 @@ body {
 button {
   margin: 7px;
   padding: 4px;
+  height: 30px;
+}
+
+input {
+  width: 62px;
+  height: 23px;
 }
